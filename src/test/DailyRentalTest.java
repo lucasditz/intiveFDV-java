@@ -1,10 +1,10 @@
-package Test;
+package test;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Date;
 import org.junit.jupiter.api.Test;
 
-import Model.DailyRental;
+import model.DailyRental;
 
 class DailyRentalTest {
 
