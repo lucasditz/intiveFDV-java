@@ -1,18 +1,19 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import static org.junit.Assert.*;
 import java.util.Date;
-import org.junit.jupiter.api.Test;
+
 
 import model.DailyRental;
 import model.FamilyRental;
 import model.HourlyRental;
 import model.WeeklyRental;
 
-class FamilyRentalTest {
+public class FamilyRentalTest {
 		
-	@Test
-	void testWhenRentalIsAddedTwiceFamilyRentalThrowException() {
+	@Test(expected = IllegalArgumentException.class)
+	public void testWhenRentalIsAddedTwiceFamilyRentalThrowException() {
 		Date startDate = new Date();
 		
 		HourlyRental hourlyRental1 = new HourlyRental(startDate);
@@ -20,13 +21,11 @@ class FamilyRentalTest {
 		FamilyRental familyRental = new FamilyRental();
 		familyRental.addRental(hourlyRental1);
 		
-		assertThrows(IllegalArgumentException.class, () -> {
-			familyRental.addRental(hourlyRental1);
-	    });
+		familyRental.addRental(hourlyRental1);
 	}
 	
-	@Test
-	void testWhenFamilyRentalAreLessThanThreeThrowException() {
+	@Test(expected = UnsupportedOperationException.class)
+	public void testWhenFamilyRentalAreLessThanThreeThrowException() {
 		Date startDate = new Date();
 		
 		WeeklyRental weeklyRental1 = new WeeklyRental(startDate);
@@ -36,13 +35,11 @@ class FamilyRentalTest {
 		familyRental.addRental(weeklyRental1);
 		familyRental.addRental(daylyRental1);
 		
-		assertThrows(UnsupportedOperationException.class, () -> {
-			familyRental.getPrice();
-	    });
+		familyRental.getPrice();
 	}
 	
-	@Test
-	void testWhenFamilyRentalAreGraterThanFiveThrowException() {
+	@Test(expected = UnsupportedOperationException.class)
+	public void testWhenFamilyRentalAreGraterThanFiveThrowException() {
 		Date startDate = new Date();
 		
 		HourlyRental hourlyRental1 = new HourlyRental(startDate);
@@ -61,13 +58,11 @@ class FamilyRentalTest {
 		familyRental.addRental(hourlyRental2);
 		familyRental.addRental(daylyRental2);
 		
-		assertThrows(UnsupportedOperationException.class, () -> {
-			familyRental.addRental(weeklyRental2);
-	    });
+		familyRental.addRental(weeklyRental2);
 	}
 	
 	@Test
-	void testFamilyRentalPriceIsThirtyPercentDiscountOffAllRentalsIncluded() {
+	public void testFamilyRentalPriceIsThirtyPercentDiscountOffAllRentalsIncluded() {
 		Date startDate = new Date();
 		
 		HourlyRental hourlyRental1 = new HourlyRental(startDate);
@@ -89,7 +84,7 @@ class FamilyRentalTest {
 				hourlyRental2.getPrice() + daylyRental2.getPrice();
 		double priceWithDiscount = priceSum  * (1-familyRental.getDiscount());
 		
-		assertEquals(priceWithDiscount, familyRental.getPrice());
+		assertEquals(priceWithDiscount, familyRental.getPrice(), 0.01);
 	}
 	
 }

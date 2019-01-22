@@ -1,20 +1,20 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import static org.junit.Assert.*;
 import java.util.Date;
-import org.junit.jupiter.api.Test;
 
 import model.DailyRental;
 
-class DailyRentalTest {
+public class DailyRentalTest {
 
 	@Test
-	void testDaylyRentalPriceIsTwenty() {
+	public void testDaylyRentalPriceIsTwenty() {
 		Date startDate = new Date();
 		
 		DailyRental dailyRental = new DailyRental(startDate);
 		
-		assertEquals(20, dailyRental.getPrice());
+		assertEquals(20, dailyRental.getPrice(), 0.01);
 	}
 
 }
