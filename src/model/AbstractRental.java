@@ -2,7 +2,7 @@ package model;
 import java.util.Calendar;
 import java.util.Date;
 
-public abstract class AbtractRental implements RentalInterface {
+public abstract class AbstractRental implements RentalInterface {
 	protected static double rentalSerialCode = 1;
 	
 	protected double rentalCode;
@@ -12,7 +12,7 @@ public abstract class AbtractRental implements RentalInterface {
 	
 	protected abstract void generateEndDate();
 	
-	protected AbtractRental(double price, Date startDate) {
+	protected AbstractRental(double price, Date startDate) {
 		this.price = price;
 		setStartDate(startDate);
 		rentalCode = rentalSerialCode;

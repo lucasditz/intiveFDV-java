@@ -7,9 +7,9 @@ public class FamilyRental implements RentalInterface{
 	private static final int MAX_RENTAL = 5;
 	private static final double DISCOUNT = 0.3;
 	
-	private HashMap<Double,AbtractRental> rentals = new HashMap<Double,AbtractRental>();
+	private HashMap<Double,AbstractRental> rentals = new HashMap<Double,AbstractRental>();
 	
-	public void addRental(AbtractRental rental) {
+	public void addRental(AbstractRental rental) {
 		if (rentals.size() == MAX_RENTAL) {
 			throw new UnsupportedOperationException("Maximum rental included in promotion of "+ MAX_RENTAL+" exceeded."); 
 		}
@@ -29,7 +29,7 @@ public class FamilyRental implements RentalInterface{
 		
 		double price = 0;
 		
-		for (AbtractRental rental : rentals.values()) {
+		for (AbstractRental rental : rentals.values()) {
 			price+= rental.getPrice();
 		}
 				

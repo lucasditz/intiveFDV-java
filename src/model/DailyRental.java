@@ -3,7 +3,7 @@ package model;
 import java.util.Calendar;
 import java.util.Date;
 
-public class DailyRental extends AbtractRental{
+public class DailyRental extends AbstractRental{
 	private static final double DAILYPRICE = 20;
 	
 	public DailyRental(Date startDate) {

@@ -11,6 +11,6 @@ import org.junit.runners.Suite;
     WeeklyRentalTest.class,
     FamilyRentalTest.class
 })
-public class JUnitTestSuit {
+public class JUnitTestSuite {
 
 }
