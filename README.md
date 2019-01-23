@@ -13,4 +13,4 @@ A company rents bikes under following options:
 
 ## Solution disign
 
-:![screen shot 2](/relative/path/to/Diagramadeclase.png?raw=true "Optional Title")
+![](/relative/path/to/Diagramadeclase.png?raw=true "Optional Title")
