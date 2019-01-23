@@ -17,7 +17,7 @@ A company rents bikes under following options:
 
 ## Solution explaining
 
-The problem was solved by a simple heritage design. It is an small problem and i don't saw the necessity of using design patterns.
+The problem was solved by a simple heritage design. It is an small problem and i didn't see the necessity of using design patterns.
 I use an abstract class for all property shared by the three rentals types (hourly, dayly and weekly), an all simple rental inherit from this abstract class.
 
 For this problem there is no need of model the three type of rental because they only have different prices, with a singleton class "Price" it would be enough. But if we think it as a real problem, modeling them as diferent clases make the design more flexible and escalable for futher feactures.
