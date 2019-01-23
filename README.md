@@ -13,4 +13,4 @@ A company rents bikes under following options:
 
 ## Solution disign
 
-![](/relative/path/to/Diagramadeclase.png?raw=true "Optional Title")
+![](https://github.com/lucasditz/intiveFDV-java/blob/master/Diagramadeclase.png)
